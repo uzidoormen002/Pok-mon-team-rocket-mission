@@ -43,7 +43,7 @@ print("top priority is capture Mewtwo if you can't then you can secondary object
 <body>
  
 
-<img src="https://thf.bing.com/th/id/OIP.AMhKDordlB0tTufTM9q8DQHaER?w=293&h=180&c=7&r=0&o=7&cb=thfc1&pid=1.7&rm=3" alt="Project Image">
+<img src="" alt="Project Image">
  
 <br>
 <button onclick="startProject()">Begin</button>
