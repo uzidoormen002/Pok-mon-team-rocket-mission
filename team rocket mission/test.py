@@ -7,6 +7,8 @@ WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("team rockets biggest catch secret mission")
 
+
+
 def main():
     global current_level, game_state, selected_items
 
