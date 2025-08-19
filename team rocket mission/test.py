@@ -19,7 +19,7 @@ team_rocket = ["NARRATOR"]
 current_speaker = 0
 
 dialogue = [
-    ("NARRATOR", "Hello I'm the narrator of the pokemon universe you have been chosen"),
+    ("NARRATOR", "Hello I’m the narrator of the pokemon universe you have been chosen"),
     ("NARRATOR", "to redeem the past failures of Jessie James and Meowth from team rocket")
     ("NARRATOR", "from a cutrain point of time you will have to chose the actions Jessie James and Meowth have to take to redeem themselfs"),
     ("NARRATOR", "to do this you wil be sent to new island"),
