@@ -15,20 +15,20 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 # Characters
-team_rocket = ["Jessie", "James", "Meowth"]
+team_rocket = ["NARRATOR"]
 current_speaker = 0
 
 dialogue = [
-    ("Hello I'm the narrator of the pokemon universe you have been chosen"),
-    ("to redeem the past failures of Jessie James and Meowth from team rocket")
-    ("from a cutrain point of time you will have to chose the actions Jessie James and Meowth have to take to redeem themselfs"),
-    ("to do this you wil be sent to new island"),
-    ("Hey! What are you creeps doing here?!"),
-    ("We’re here to, uh, admire the Pokémon... totally not steal them!"),
-    ("Pika pii!"),
-    ("Even the Pikachu knows we’re lying..."),
-    ("You dare trespass on my island? Your ambition will be your downfall."),
-    ("Uh-oh..."),
+    ("NARRATOR", "Hello I'm the narrator of the pokemon universe you have been chosen"),
+    ("NARRATOR", "to redeem the past failures of Jessie James and Meowth from team rocket")
+    ("NARRATOR", "from a cutrain point of time you will have to chose the actions Jessie James and Meowth have to take to redeem themselfs"),
+    ("NARRATOR", "to do this you wil be sent to new island"),
+    ("NARRATOR", "Hey! What are you creeps doing here?!"),
+    ("NARRATOR", "We’re here to, uh, admire the Pokémon... totally not steal them!"),
+    ("NARRATOR", "Pika pii!"),
+    ("NARRATOR", "Even the Pikachu knows we’re lying..."),
+    ("NARRATOR", "You dare trespass on my island? Your ambition will be your downfall."),
+    ("NARRATOR", "Uh-oh..."),
 ]
 
 dialogue_index = 0
