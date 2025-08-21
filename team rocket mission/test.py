@@ -20,15 +20,16 @@ current_speaker = 0
 
 dialogue = [
     ("NARRATOR", "Hello I’m the narrator of the pokemon universe you have been chosen"),
-    ("NARRATOR", "to redeem the past failures of Jessie James and Meowth from team rocket")
-    ("NARRATOR", "from a cutrain point of time you will have to chose the actions Jessie James and Meowth have to take to redeem themselfs"),
+    ("NARRATOR", "to live through the past failures of Jessie James and Meowth"),
+    ("NARRATOR", "from a cutrain point of time you will have to chose the actions of"),
+    ("NARRATOR", "Jessie James and Meowth to redeem themselfs"),
     ("NARRATOR", "to do this you wil be sent to new island"),
-    ("NARRATOR", "Hey! What are you creeps doing here?!"),
-    ("NARRATOR", "We’re here to, uh, admire the Pokémon... totally not steal them!"),
-    ("NARRATOR", "Pika pii!"),
-    ("NARRATOR", "Even the Pikachu knows we’re lying..."),
-    ("NARRATOR", "You dare trespass on my island? Your ambition will be your downfall."),
-    ("NARRATOR", "Uh-oh..."),
+    ("NARRATOR", "your mission is to capture all the pokemon on the island"),
+    ("NARRATOR", "or at least some of the pokemon on the island you choose which"),
+    ("NARRATOR", "and if you can capture Mewtwo but it will be difficult to do"),
+    ("NARRATOR", "when your ready just press space when the button begin pops up"),
+    ("NARRATOR", "the controls are arrows and to comfirm an option press space"),
+    ("NARRATOR", "good luck team rocket HAHAHA!!!"),
 ]
 
 dialogue_index = 0
@@ -46,7 +47,7 @@ while running:
         text_surface = font.render(f"{speaker}: {line}", True, WHITE)
         screen.blit(text_surface, (50, HEIGHT - 100))
     else:
-        text_surface = font.render("End of Demo. To be continued...", True, WHITE)
+        text_surface = font.render("you have failed, better luck next time or not HAHAHAHA!!!", True, WHITE)
         screen.blit(text_surface, (50, HEIGHT - 100))
 
     pygame.display.flip()
