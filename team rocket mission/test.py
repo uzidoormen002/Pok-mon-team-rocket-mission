@@ -11,8 +11,8 @@ pygame.display.set_caption("team rockets biggest catch secret mission")
 font = pygame.font.SysFont("Arial", 24)
 
 
-WHITE = (255, 255, 255)
-BLACK = (10, 60, 120)
+WHITE = (210, 100, 0)
+BLACK = (10, 60, 160)
 
 
 team_rocket = ["NARRATOR" "Jessie" "James" "Meowth"]
