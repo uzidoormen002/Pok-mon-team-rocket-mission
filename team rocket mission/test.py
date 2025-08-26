@@ -12,10 +12,10 @@ font = pygame.font.SysFont("Arial", 24)
 
 
 WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
+BLACK = (10, 30, 50)
 
 
-team_rocket = ["NARRATOR"]
+team_rocket = ["NARRATOR" "Jessie" "James" "Meowth"]
 current_speaker = 0
 
 dialogue = [
@@ -57,7 +57,7 @@ while True:
             running = False
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-                dialogue_index += 1  # Move to next line of dialogue
+                dialogue_index += 1  
 
     clock.tick(30)
 
