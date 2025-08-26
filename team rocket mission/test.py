@@ -12,7 +12,7 @@ font = pygame.font.SysFont("Arial", 24)
 
 
 WHITE = (255, 255, 255)
-BLACK = (10, 30, 50)
+BLACK = (10, 60, 120)
 
 
 team_rocket = ["NARRATOR" "Jessie" "James" "Meowth"]
