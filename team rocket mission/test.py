@@ -7,14 +7,14 @@ WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("team rockets biggest catch secret mission")
 
-# Fonts
+
 font = pygame.font.SysFont("Arial", 24)
 
-# Colors
+
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-# Characters
+
 team_rocket = ["NARRATOR"]
 current_speaker = 0
 
@@ -34,14 +34,14 @@ dialogue = [
 
 dialogue_index = 0
 
-# Game loop
-clock = pygame.time.Clock()
-running = True
 
-while running:
+clock = pygame.time.Clock()
+
+
+while True:
     screen.fill(BLACK)
 
-    # Draw current dialogue
+
     if dialogue_index < len(dialogue):
         speaker, line = dialogue[dialogue_index]
         text_surface = font.render(f"{speaker}: {line}", True, WHITE)
