@@ -50,6 +50,8 @@ while True:
         text_surface = font.render("you have failed, better luck next time or not HAHAHAHA!!!", True, WHITE)
         screen.blit(text_surface, (50, HEIGHT - 100))
 
+
+
     pygame.display.flip()
 
     for event in pygame.event.get():
