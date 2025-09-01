@@ -14,8 +14,6 @@ font = pygame.font.SysFont("Arial", 24)
 WHITE = (210, 100, 0)
 BLACK = (10, 60, 160)
 
-background = pygame.image.load("c:\Users\matthew.nath\OneDrive - Southland Boys' High School\dtc\2025\team rocket mission\title screen.webp")  
-background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 
 team_rocket = ["NARRATOR" "Jessie" "James" "Meowth"]
 current_speaker = 0
