@@ -5,7 +5,7 @@ pygame.init()
 
 WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("team rockets biggest catch secret mission")
+pygame.display.set_caption("team rockets biggest catch mission")
 
 
 font = pygame.font.SysFont("Arial", 24)
