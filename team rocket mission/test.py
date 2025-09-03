@@ -9,7 +9,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("team rockets biggest catch mission")
 
 
-font = pygame.font.SysFont("Arial", 24)
+text_surface = f.render("arial", True, WHITE)
 Background = "https://thf.bing.com/th/id/OIP.AMhKDordlB0tTufTM9q8DQHaER?w=294&h=180&c=7&r=0&o=7&cb=thfc1&pid=1.7&rm=3"
 
 WHITE = (210, 100, 0)
