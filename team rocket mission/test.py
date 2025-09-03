@@ -1,5 +1,6 @@
 import pygame
 import sys
+import time
 
 pygame.init()
 
@@ -9,14 +10,14 @@ pygame.display.set_caption("team rockets biggest catch mission")
 
 
 font = pygame.font.SysFont("Arial", 24)
-
+Background = "https://thf.bing.com/th/id/OIP.AMhKDordlB0tTufTM9q8DQHaER?w=294&h=180&c=7&r=0&o=7&cb=thfc1&pid=1.7&rm=3"
 
 WHITE = (210, 100, 0)
 BLACK = (10, 60, 160)
 yellow = (240, 217, 9)
 
-background = pygame.image.load("https://www.bing.com/images/search?view=detailV2&ccid=AMhKDord&id=5E9D5DD4087B209F1DDC8AA8AC1A2930E8AF14EC&thid=OIP.AMhKDordlB0tTufTM9q8DQHaER&mediaurl=https%3a%2f%2fstatic.wikia.nocookie.net%2fpokemon%2fimages%2f2%2f23%2f787549_M22_Logo_EN_wPokemon_Dark_Final.jpg%2frevision%2flatest%2fscale-to-width-down%2f1200%3fcb%3d20200228165144&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.00c84a0e8add941d2d4ee7d333dabc0d%3frik%3d7BSv6DApGqyoig%26pid%3dImgRaw%26r%3d0&exph=693&expw=1200&q=mewtwo+strikes+back+evolution&FORM=IRPRST&ck=75851BCC29F5A7A5A648C440569432B1&selectedIndex=24&itb=0")
-background = pygame.transform.scale("https://www.bing.com/images/search?view=detailV2&ccid=AMhKDord&id=5E9D5DD4087B209F1DDC8AA8AC1A2930E8AF14EC&thid=OIP.AMhKDordlB0tTufTM9q8DQHaER&mediaurl=https%3a%2f%2fstatic.wikia.nocookie.net%2fpokemon%2fimages%2f2%2f23%2f787549_M22_Logo_EN_wPokemon_Dark_Final.jpg%2frevision%2flatest%2fscale-to-width-down%2f1200%3fcb%3d20200228165144&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.00c84a0e8add941d2d4ee7d333dabc0d%3frik%3d7BSv6DApGqyoig%26pid%3dImgRaw%26r%3d0&exph=693&expw=1200&q=mewtwo+strikes+back+evolution&FORM=IRPRST&ck=75851BCC29F5A7A5A648C440569432B1&selectedIndex=24&itb=0", (WIDTH, HEIGHT))
+background = pygame.image.load
+background = pygame.transform.scale(Background, (WIDTH, HEIGHT))
 
 team_rocket = ["NARRATOR" "Jessie" "James" "Meowth"]
 current_speaker = 0
@@ -41,7 +42,9 @@ dialogue_index = 0
 clock = pygame.time.Clock()
 
 
-while True:
+running = True
+while running:
+    
     screen.blit(background, (0, 0))
 
 
