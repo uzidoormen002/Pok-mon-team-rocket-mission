@@ -12,11 +12,7 @@ font = pygame.font.SysFont("Arial", 24)
 
 WHITE = (210, 100, 0)
 BLACK = (10, 60, 160)
-yellow = (240, 217, 9)
-background_file = "title_screen.png"
-background = pygame.image.load("image/title_screen.png")   
-background = pygame.transform.scale(background, (WIDTH, HEIGHT))
-
+YELLOW = (240, 217, 9)
 
 team_rocket = ["NARRATOR", "Jessie", "James", "Meowth"]
 current_speaker = 0
@@ -36,26 +32,21 @@ dialogue = [
 ]
 
 dialogue_index = 0
-
-
 clock = pygame.time.Clock()
-
 
 running = True
 while running:
-    
-    screen.blit(background, (0, 0))
-    50, HEIGHT - 120
+    screen.fill(BLACK)
 
     if dialogue_index < len(dialogue):
         speaker, line = dialogue[dialogue_index]
         text_surface = font.render(f"{speaker}: {line}", True, WHITE)
         screen.blit(text_surface, (50, HEIGHT - 100))
     else:
-        text_surface = font.render("you have failed, better luck next time or not HAHAHAHA!!!", True, WHITE)
+        text_surface = font.render(
+            "you have failed, better luck next time or not HAHAHAHA!!!", True, WHITE
+        )
         screen.blit(text_surface, (50, HEIGHT - 120))
-
-
 
     pygame.display.flip()
 
