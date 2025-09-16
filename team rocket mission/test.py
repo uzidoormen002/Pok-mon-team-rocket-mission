@@ -13,7 +13,6 @@ WHITE = (210, 100, 0)
 BLACK = (10, 60, 160)
 YELLOW = (240, 217, 9)
 
-# Intro dialogue
 intro_dialogue = [
     ("NARRATOR", "Hello I’m the narrator of the pokemon universe you have been chosen"),
     ("NARRATOR", "to live through the past failures of Jessie James and Meowth"),
@@ -28,7 +27,6 @@ intro_dialogue = [
     ("NARRATOR", "so yeah when your ready just press space to start the mission"),
 ]
 
-# Branch dialogues
 staircase_dialogue = [
     ("Jessie", "Look James, a spiral staircase leading into the tower!"),
     ("James", "Do we really have to climb this? I just polished my boots."),
@@ -53,7 +51,6 @@ underwater_dialogue = [
     ("NARRATOR", "The carvings hint at a legendary Pokémon deep within."),
 ]
 
-# Shared branch: Pokémon battle scene
 pokemon_battle_dialogue = [
     ("NARRATOR", "The ground shakes. A bright light pierces the sky."),
     ("Jessie", "What in the world is that?!"),
@@ -64,10 +61,9 @@ pokemon_battle_dialogue = [
     ("NARRATOR", "Charizard and its clone clash, their roars shaking the tower."),
     ("James", "I can’t tell who’s the real one anymore!"),
     ("NARRATOR", "Mewtwo hovers above, watching as the chaos unfolds."),
-    ("Meowth", "If dis keeps up... there won’t be a world left to steal Pokémon from!"),
+    ("Meowth", "If dis keeps up... there won’t be any pokemon left to steal!"),
 ]
 
-# Dialogue engine
 dialogue_index = 0
 displayed_text = ""
 char_index = 0
@@ -76,7 +72,6 @@ finished_line = False
 
 clock = pygame.time.Clock()
 
-# Game states
 START_SCREEN = 0
 INTRO = 1
 ADVENTURE_PROMPT = 2
@@ -87,7 +82,6 @@ UNDERWATER = 6
 POKEMON_BATTLE = 7
 state = START_SCREEN
 
-# Choice menu setup
 choices = ["Go up the spiral staircase", "Swim back to the mainland", "Look underwater for clues"]
 selected_choice = 0
 
@@ -109,7 +103,7 @@ def handle_dialogue(dialogue_list):
         screen.blit(text_surface, (50, HEIGHT - 100))
         return False
     else:
-        return True  # finished dialogue
+        return True  
 
 running = True
 while running:
@@ -199,7 +193,6 @@ while running:
                         state = MAINLAND
                     elif selected_choice == 2:
                         state = UNDERWATER
-                    # reset dialogue tracking
                     dialogue_index, displayed_text, char_index, finished_line = 0, "", 0, False
 
     clock.tick(30)
