@@ -48,7 +48,11 @@ underwater_dialogue = [
     ("James", "I hope my hair gel is waterproof..."),
     ("Meowth", "Quit yappin’ and start swimmin’!"),
     ("NARRATOR", "You dive below, finding ruins covered in strange carvings."),
-    ("NARRATOR", "The carvings hint at a legendary Pokémon deep within."),
+    ("NARRATOR", "running out of breath as you go deeper you see a air pocket."),
+    ("NARRATOR", "entering the air pocket you see a strange pokemon hovering"),
+    ("NARRATOR", "in the centre of the air pocket levating water and rocks"),
+    ("NARRATOR", "the pokemon notices you and it being curious it flys at you"),
+    ("James", "get this weird tiny rat away from me it stearing at me")
 ]
 
 pokemon_battle_dialogue = [
