@@ -1,5 +1,6 @@
 import pygame
 import sys
+import random
 
 pygame.init()
 
@@ -13,6 +14,7 @@ WHITE = (210, 100, 0)
 BLACK = (10, 60, 160)
 YELLOW = (240, 217, 9)
 
+# --- Dialogues (unchanged) ---
 intro_dialogue = [
     ("NARRATOR", "Hello I’m the narrator of the pokemon universe you have been chosen"),
     ("NARRATOR", "to live through the past failures of Jessie James and Meowth"),
@@ -50,24 +52,29 @@ underwater_dialogue = [
     ("NARRATOR", "You dive below, finding ruins covered in strange carvings."),
     ("NARRATOR", "running out of breath as you go deeper you see a air pocket."),
     ("NARRATOR", "entering the air pocket you see a strange pokemon hovering"),
-    ("NARRATOR", "in the centre of the air pocket levating water and rocks"),
-    ("NARRATOR", "the pokemon notices you and it being curious it flys at you"),
-    ("James", "get this weird tiny rat away from me it stearing at me")
+    ("NARRATOR", "in the centre of the air pocket levating water and rocks."),
+    ("NARRATOR", "the pokemon notices you and it being curious it flys at you."),
+    ("James", "get this weird tiny rat away from me it stearing at me.")
 ]
 
 pokemon_battle_dialogue = [
     ("NARRATOR", "The ground shakes. A bright light pierces the sky."),
     ("Jessie", "What in the world is that?!"),
-    ("James", "Those aren’t ordinary Pokémon..."),
-    ("Meowth", "No way... they’re fightin’ their own clones!"),
+    ("NARRATOR", "the strange pokemon in front of you sqeals."),
+    ("NARRATOR", "suddenly you appear near the centre of the battle ground ."),
+    ("James", "what just happened how did we get here."),
+    ("Meowth", "what going why are there pokemon with strange patterns"),
+    ("Meowth", "and why are they fighting other pokemon"),
     ("NARRATOR", "On the battlefield, Pikachu faces its clone, refusing to strike back."),
     ("Jessie", "This... this is too cruel, even for Team Rocket."),
     ("NARRATOR", "Charizard and its clone clash, their roars shaking the tower."),
     ("James", "I can’t tell who’s the real one anymore!"),
+    ("Meowth", "who cares just try to catch any of them"),
     ("NARRATOR", "Mewtwo hovers above, watching as the chaos unfolds."),
     ("Meowth", "If dis keeps up... there won’t be any pokemon left to steal!"),
 ]
 
+# --- Typing effect vars ---
 dialogue_index = 0
 displayed_text = ""
 char_index = 0
@@ -76,6 +83,7 @@ finished_line = False
 
 clock = pygame.time.Clock()
 
+# --- Game states ---
 START_SCREEN = 0
 INTRO = 1
 ADVENTURE_PROMPT = 2
@@ -84,11 +92,13 @@ STAIRCASE = 4
 MAINLAND = 5
 UNDERWATER = 6
 POKEMON_BATTLE = 7
+CATCH_PHASE = 8   # NEW STATE
 state = START_SCREEN
 
 choices = ["Go up the spiral staircase", "Swim back to the mainland", "Look underwater for clues"]
 selected_choice = 0
 
+# --- Functions ---
 def draw_text_center(text, y, color=WHITE):
     surf = font.render(text, True, color)
     screen.blit(surf, (WIDTH//2 - surf.get_width()//2, y))
@@ -109,7 +119,14 @@ def handle_dialogue(dialogue_list):
     else:
         return True  
 
+def catch_pokemon():
+    """Random chance to catch the Pokémon (50/50 for now)."""
+    return random.choice([True, False])
+
+# --- Main loop ---
 running = True
+catch_result = None  # store success/failure
+
 while running:
     screen.fill(BLACK)
 
@@ -148,7 +165,15 @@ while running:
 
     elif state == POKEMON_BATTLE:
         if handle_dialogue(pokemon_battle_dialogue):
-            draw_text_center("To be continued... The battle rages on!", HEIGHT//2, YELLOW)
+            draw_text_center("The clones fight... Press SPACE to try catching a Pokémon!", HEIGHT//2, YELLOW)
+
+    elif state == CATCH_PHASE:
+        if catch_result is None:
+            draw_text_center("Throwing Pokéball...", HEIGHT//2, WHITE)
+        elif catch_result:
+            draw_text_center("Gotcha! The Pokémon was caught!", HEIGHT//2, YELLOW)
+        else:
+            draw_text_center("Oh no! The Pokémon broke free!", HEIGHT//2, WHITE)
 
     pygame.display.flip()
 
@@ -156,9 +181,8 @@ while running:
         if event.type == pygame.QUIT:
             running = False
         elif event.type == pygame.KEYDOWN:
-            if state == START_SCREEN:
-                if event.key == pygame.K_SPACE:
-                    state = INTRO
+            if state == START_SCREEN and event.key == pygame.K_SPACE:
+                state = INTRO
 
             elif state in [INTRO, STAIRCASE, MAINLAND, UNDERWATER, POKEMON_BATTLE]:
                 dialogue_map = {
@@ -181,9 +205,12 @@ while running:
                         char_index = 0
                         finished_line = False
 
-            elif state == ADVENTURE_PROMPT:
-                if event.key == pygame.K_SPACE:
-                    state = CHOICE_MENU
+                    if state == POKEMON_BATTLE and dialogue_index >= len(pokemon_battle_dialogue):
+                        state = CATCH_PHASE
+                        catch_result = None
+
+            elif state == ADVENTURE_PROMPT and event.key == pygame.K_SPACE:
+                state = CHOICE_MENU
 
             elif state == CHOICE_MENU:
                 if event.key == pygame.K_UP:
@@ -198,6 +225,10 @@ while running:
                     elif selected_choice == 2:
                         state = UNDERWATER
                     dialogue_index, displayed_text, char_index, finished_line = 0, "", 0, False
+
+            elif state == CATCH_PHASE and event.key == pygame.K_SPACE:
+                if catch_result is None:
+                    catch_result = catch_pokemon()
 
     clock.tick(30)
 
