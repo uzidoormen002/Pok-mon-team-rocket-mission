@@ -61,16 +61,18 @@ pokemon_battle_dialogue = [
     ("NARRATOR", "The ground shakes. A bright light pierces the sky."),
     ("Jessie", "What in the world is that?!"),
     ("NARRATOR", "the strange pokemon in front of you sqeals."),
-    ("NARRATOR", "suddenly you appear near the centre of the battle ground ."),
+    ("NARRATOR", "suddenly you appear near the centre of the battle ground."),
     ("James", "what just happened how did we get here."),
-    ("Meowth", "what going why are there pokemon with strange patterns"),
+    ("Meowth", "what going on why are there pokemon with strange patterns"),
     ("Meowth", "and why are they fighting other pokemon"),
+    ("Jessie", "I think we just got teleported to a fight between actual pokemon"),
+    ("Jessie", "and what I think are there clones"),
     ("NARRATOR", "On the battlefield, Pikachu faces its clone, refusing to strike back."),
-    ("Jessie", "This... this is too cruel, even for Team Rocket."),
+    ("NARRATOR", "Mewtwo hovers above, watching as the chaos unfolds."),
     ("NARRATOR", "Charizard and its clone clash, their roars shaking the tower."),
+
     ("James", "I can’t tell who’s the real one anymore!"),
     ("Meowth", "who cares just try to catch any of them"),
-    ("NARRATOR", "Mewtwo hovers above, watching as the chaos unfolds."),
     ("Meowth", "If dis keeps up... there won’t be any pokemon left to steal!"),
 ]
 
