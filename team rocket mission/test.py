@@ -14,7 +14,6 @@ WHITE = (210, 100, 0)
 BLACK = (10, 60, 160)
 YELLOW = (240, 217, 9)
 
-# --- Dialogues (unchanged) ---
 intro_dialogue = [
     ("NARRATOR", "Hello I’m the narrator of the pokemon universe you have been chosen"),
     ("NARRATOR", "to live through the past failures of Jessie James and Meowth"),
@@ -25,7 +24,6 @@ intro_dialogue = [
     ("NARRATOR", "or at least some of the pokemon on the island you choose which"),
     ("NARRATOR", "and if you can capture Mewtwo then great an expiriment returned"),
     ("NARRATOR", "the controls are arrows and to comfirm an option press space"),
-    ("NARRATOR", "good luck hopefully you don’t blast off HAHAHA!!!"),
     ("NARRATOR", "so yeah when your ready just press space to start the mission"),
 ]
 
@@ -33,8 +31,11 @@ staircase_dialogue = [
     ("Jessie", "Look James, a spiral staircase leading into the tower!"),
     ("James", "Do we really have to climb this? I just polished my boots."),
     ("Meowth", "Stop complainin’! There could be rare Pokémon at the top!"),
-    ("NARRATOR", "You begin climbing the spiral staircase... step by step."),
+    ("Jessie", "yes James you dont see me complaining about my hair maybe"),
+    ("Jessie", "getting cought of those scary rusty looking stairs"),
+    ("Meowth", "lets just get going so we can get out of here as quick as possible"),
     ("NARRATOR", "The air grows colder, and you hear the echo of a Pokémon cry above."),
+    ("NARRATOR", "walking up the staircase you constantly here creaking from the staircase."),
 ]
 
 mainland_dialogue = [
@@ -43,6 +44,9 @@ mainland_dialogue = [
     ("Meowth", "You two are hopeless..."),
     ("NARRATOR", "Despite the bickering, you dive into the water and start paddling."),
     ("NARRATOR", "A school of Water Pokémon follows, curious about your mission."),
+    ("NARRATOR", "suddenly you get pulled under by a whirlpool that poped up out of nowhere."),
+    ("NARRATOR", "while being pulled in you get chucked into a unuseal air pocket in the water."),
+    ("NARRATOR", "looking around you see a pokemon hovering in the air."),
 ]
 
 underwater_dialogue = [
@@ -70,13 +74,11 @@ pokemon_battle_dialogue = [
     ("NARRATOR", "On the battlefield, Pikachu faces its clone, refusing to strike back."),
     ("NARRATOR", "Mewtwo hovers above, watching as the chaos unfolds."),
     ("NARRATOR", "Charizard and its clone clash, their roars shaking the tower."),
-
     ("James", "I can’t tell who’s the real one anymore!"),
     ("Meowth", "who cares just try to catch any of them"),
     ("Meowth", "If dis keeps up... there won’t be any pokemon left to steal!"),
 ]
 
-# --- Typing effect vars ---
 dialogue_index = 0
 displayed_text = ""
 char_index = 0
@@ -85,7 +87,6 @@ finished_line = False
 
 clock = pygame.time.Clock()
 
-# --- Game states ---
 START_SCREEN = 0
 INTRO = 1
 ADVENTURE_PROMPT = 2
@@ -94,13 +95,12 @@ STAIRCASE = 4
 MAINLAND = 5
 UNDERWATER = 6
 POKEMON_BATTLE = 7
-CATCH_PHASE = 8   # NEW STATE
+CATCH_PHASE = 8   
 state = START_SCREEN
 
 choices = ["Go up the spiral staircase", "Swim back to the mainland", "Look underwater for clues"]
 selected_choice = 0
 
-# --- Functions ---
 def draw_text_center(text, y, color=WHITE):
     surf = font.render(text, True, color)
     screen.blit(surf, (WIDTH//2 - surf.get_width()//2, y))
@@ -122,12 +122,10 @@ def handle_dialogue(dialogue_list):
         return True  
 
 def catch_pokemon():
-    """Random chance to catch the Pokémon (50/50 for now)."""
     return random.choice([True, False])
 
-# --- Main loop ---
 running = True
-catch_result = None  # store success/failure
+catch_result = None 
 
 while running:
     screen.fill(BLACK)
@@ -173,9 +171,9 @@ while running:
         if catch_result is None:
             draw_text_center("Throwing Pokéball...", HEIGHT//2, WHITE)
         elif catch_result:
-            draw_text_center("Gotcha! The Pokémon was caught!", HEIGHT//2, YELLOW)
+            draw_text_center("we did it! The Pokémon was caught!", HEIGHT//2, YELLOW)
         else:
-            draw_text_center("Oh no! The Pokémon broke free!", HEIGHT//2, WHITE)
+            draw_text_center("Oh no its turning toward us! The Pokémon broke free!", HEIGHT//2, WHITE)
 
     pygame.display.flip()
 
